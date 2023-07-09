@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Add to cart</title>
+<link rel="manifest" href="./manifest.json" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" />
+<link rel="shortcut icon" href="./assets/favicon.webp" type="image/x-icon" />
+<link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+<div class="container">
+<img src="./assets/cat.webp" />
+<input type="text" id="input-field" placeholder="Bread.." />
+<button id="add-button" type="submit">Add to cart</button>
+<ul id="shopping-list"></ul>
+</div>
+<script>
+if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('/service-worker.js')
+.then(registration => {
+console.log('Service Worker registered with scope:', registration.scope);
+})
+.catch(error => {
+console.error('Service Worker registration failed:', error);
+});
+}
+</script>
+<script src="./index.js" type="module"></script>
+</body>
+</html>
